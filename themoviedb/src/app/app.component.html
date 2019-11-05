@@ -4,19 +4,20 @@
       <h1>Discover</h1>
       <div class="filters d-flex">
         <ul>
-          <li class="links">Popular</li>
-          <li class="links">Trending</li>
-          <li class="links">Newest</li>
-          <li class="links">Top Rated</li>
+          <li class="links active" (click)="fetchList('popular')">Popular</li>
+          <li class="links" (click)="fetchList('trending')">Trending</li>
+          <li class="links" (click)="fetchList('newest')">Newest</li>
+          <li class="links" (click)="fetchList('toprated')">Top Rated</li>
         </ul>
       </div>
       <div class="search"><input type="text" placeholder="SEARCH"/></div>
     </div>
     <div class="listing">
-      <!-- <div *ngFor="let d of items">
-        <div>{{d.poster_path}}</div>
+      <div *ngFor="let d of items">
+        <img class="poster" src="{{imageDBBaseUrl+d.poster_path}}" />
+        <h4 class="title">{{d.title}}</h4>
 
-      </div> -->
+      </div>
     </div>
   </section>
   <section class="sidebar">
